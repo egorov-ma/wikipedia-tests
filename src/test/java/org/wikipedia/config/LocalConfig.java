@@ -7,9 +7,6 @@ public interface LocalConfig extends Config {
     @Key("device")
     String getDeviceName();
 
-    @Key("platformName")
-    String getPlatformName();
-
     @Key("os_version")
     String getPlatformVersion();
 

@@ -53,4 +53,19 @@ public class WikiLocalTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
+
+    @Test
+    @DisplayName("Проверка поиска")
+    void searchPageTest() {
+        step("Закрыть экран настроек", () -> back());
+
+        step("Перейти в меню поиска", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/nav_more_container")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/main_drawer_settings_container")).click();
+            $$(AppiumBy.id("android:id/title")).findBy(text("Explore Feed")).click();
+        });
+        step("Проверить, что результатов страницы поиска больше 1", () ->
+                $$(AppiumBy.id("org.wikipedia.alpha:id/feed_content_type_title"))
+                        .shouldHave(sizeGreaterThan(1)));
+    }
 }

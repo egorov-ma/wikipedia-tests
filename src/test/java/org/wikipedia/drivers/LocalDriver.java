@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
+import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalDriver implements WebDriverProvider {
@@ -28,7 +29,7 @@ public class LocalDriver implements WebDriverProvider {
         options.merge(capabilities);
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
-                .setPlatformName(local.getPlatformName())
+                .setPlatformName(ANDROID)
                 .setPlatformVersion(local.getPlatformVersion())
                 .setDeviceName(local.getDeviceName())
                 .setApp(getAppPath())
