@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Тестировании мобильного приложения Wikipedia на локальном эмуляторе")
 public class WikiLocalTests extends TestBase {
     @Test
-    @DisplayName("Проверка onboarding screen ")
+    @DisplayName("Проверка onboarding screen")
     void onBoardingPagesTest() {
         step("Проверить первую страницу", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
