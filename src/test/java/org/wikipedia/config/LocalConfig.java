@@ -5,10 +5,13 @@ import org.aeonbits.owner.Config;
 @Config.Sources({"classpath:local.properties"})
 public interface LocalConfig extends Config {
     @Key("device")
-    String getDevice();
+    String getDeviceName();
+
+    @Key("platformName")
+    String getPlatformName();
 
     @Key("os_version")
-    String getVersion();
+    String getPlatformVersion();
 
     @Key("localServerUrl")
     String getServerUrl();
