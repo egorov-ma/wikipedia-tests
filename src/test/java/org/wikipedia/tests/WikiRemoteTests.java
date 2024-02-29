@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.accessibilityId;
@@ -14,16 +16,46 @@ import static io.qameta.allure.Allure.step;
 @Tag("remote")
 @DisplayName("Тестировании мобильного приложения Wikipedia на удаленном эмуляторе")
 public class WikiRemoteTests extends TestBase {
+    String search = "Egorov";
+
     @Test
-    @DisplayName("Проверить непустой список выдачи при запросе")
-    void successfulSearchTest() {
+    @DisplayName("Проверить поиска")
+    void searchTest() {
         step("Сделать поисковой запрос", () -> {
             $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Porsche");
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys(search);
         });
 
         step("Проверить результат запроса", () ->
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
+    }
+
+    @Test
+    @DisplayName("Открытие первой найденной ссылки")
+    void searchFirstTest() {
+        step("Отправляем запрос в википедии", () -> {
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys(search);
+        });
+
+        step("Нажимаем на первую найденную ссылку", () ->
+                $$(id("org.wikipedia.alpha:id/page_list_item_title")).first().click());
+
+        step("Проверяем получение ошибки", () ->
+                $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(visible));
+    }
+
+    @Test
+    @DisplayName("Проверка краткого описания статьи")
+    void checkDescriptionTest() {
+        step("Отправляем запрос в википедии", () -> {
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
+        });
+
+        step("Проверяем, что найденный заголовок имеет корректное описание", () ->
+                $(id("org.wikipedia.alpha:id/page_list_item_description"))
+                        .shouldHave(text("Automation for Apps")));
     }
 }
