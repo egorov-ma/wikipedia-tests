@@ -77,3 +77,12 @@ ____
 <p align="center" style="background-color: #18222d">
 <img width="40%" title="Telegram Notifications" src="media/screenshots/screenshotsTelegram.png">
 </p>
+
+____
+<a id="movie"></a>
+## <img alt="Browserstack" height="25" src="media/logo/Browserstack.svg" width="25"/></a> Видеопример выполнения теста Browserstack
+<p align="center">
+<img title="Browserstack Video" src="media/screen/BrowserStack.gif" width="350" height="350"  alt="video">   
+</p>
+
+[Наверх ⬆](#наверх)
