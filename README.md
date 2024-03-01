@@ -1,6 +1,6 @@
 <h1 align="center">Проект по автоматизации тестирования мобильного приложения Wikipedia</h1>
 <p align="center">
-<a href="https://ru.wikipedia.org/"><img title="https://ru.wikipedia.org/" src="media/logo/img.png"></a>
+<a href="https://ru.wikipedia.org/"><img title="https://ru.wikipedia.org/" src="media/logo/img.jpg"></a>
 </p>
 
 >Википе́дия (англ. Wikipedia) — общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом, 
