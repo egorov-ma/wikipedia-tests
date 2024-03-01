@@ -12,6 +12,7 @@
 - <a href="#jenkins"> Сборка в Jenkins</a>
 - <a href="#allureReport"> Пример Allure-отчета</a>
 - <a href="#tg"> Уведомления в Telegram с использованием бота</a>
+- <a href="#movie">Видеопример прохождения тестов Browserstack</a>
 
 
 Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>[Selenide](https://selenide.org/)</code>, сборщик - <code>Gradle</code>.
@@ -82,7 +83,7 @@ ____
 <a id="movie"></a>
 ## <img alt="Browserstack" height="25" src="media/logo/Browserstack.svg" width="25"/></a> Видеопример выполнения теста Browserstack
 <p align="center">
-<img title="Browserstack Video" src="media/screen/BrowserStack.gif" width="350" height="350"  alt="video">   
+<img title="Browserstack Video" src="media/screenshots/BrowserStack.gif" width="350" height="350"  alt="video">   
 </p>
 
 [Наверх ⬆](#наверх)
